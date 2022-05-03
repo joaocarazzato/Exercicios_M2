@@ -57,8 +57,8 @@ function ShowOp(x, y, op){
     //Alternativa: .. += "<br />" + x + " " + op + " " + y + " = "
 }
 
-
 /* Função que mostra o resultado obtido */
 function ShowResult(res){
     document.getElementById(calcResDiv).innerHTML += res;
+    document.querySelector('main').disabled = true;
 }
