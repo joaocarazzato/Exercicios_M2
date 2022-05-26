@@ -10,7 +10,7 @@ app.use(express.static("../frontend/"));
 
 app.use(express.json())
 
-app.get('/user1', (req, res) => {
+app.get('/user', (req, res) => {
   res.statusCode = 200;
   //res.setHeader('Content-Type', 'text/html');
   res.setHeader('Access-Control-Allow-Origin', '*');
