@@ -72,13 +72,82 @@ function espacos() {
   var qtd = document.getElementById('qtdalunos').value
   var i = 0
 
-  while (i < qtd) {
+  for (i = 0; i < qtd; i++) {
     document.getElementById('sistema').innerHTML += 
-    `<div class="aluno"><input type="text" placeholder="Aluno"> </input>
-    <input type="number" placeholder="Nota 1"></input> 
-    <input type="number" placeholder="Nota 2"></input><br><br></div>`
+    `<div class="aluno">
+    <input type="number" placeholder="Nota Prova" id="notaProvaAluno${i}"></input> 
+    <input type="number" placeholder="Nota Trabalho" id="notaTrabAluno${i}"></input><br><br></div>`
     console.log(i)
-    i++
   }
-  document.getElementById('sistema').innerHTML += `<button onclick="">Calcular</button>`
+  document.getElementById('sistema').innerHTML += `<button onclick="calculoex5()">Calcular</button><br>`
 }
+
+function calculoex5() {
+var qtd = document.getElementById('qtdalunos').value
+var i = 0
+var mediaAlunos = []
+var mediaAlunosSoma = 0
+var mediaProvasSoma = 0
+var mediaTrabSoma = 0
+var provaAlunos = []
+var trabAlunos = []
+
+for (i = 0; i < qtd; i++) {
+  var nota1 = +document.getElementById('notaProvaAluno' + i).value;
+  provaAlunos.push(nota1);
+  var nota2 = +document.getElementById('notaTrabAluno' + i).value;
+  trabAlunos.push(nota2);
+  var media = ((nota1 * 2) + (nota2 * 3))/5
+  console.log('i ', i);
+  console.log("Nota Prova ",  nota1);
+  console.log("Nota Trabalho ", nota2);
+  console.log("Media ", media);
+  mediaAlunos.push(media);
+  console.log(mediaAlunos);
+  console.log("Prova Alunos ", provaAlunos);
+  console.log("Trab Alunos ", trabAlunos);
+};
+
+for (i = 0; i < qtd; i++) {
+  MediaInd = mediaAlunos[i];
+
+  MediaProvas = provaAlunos[i];
+  MediaTrabs = trabAlunos[i];
+
+  console.log(MediaInd);
+
+  mediaAlunosSoma = mediaAlunosSoma + MediaInd;
+  mediaProvasSoma = mediaProvasSoma + MediaProvas;
+  mediaTrabSoma = mediaTrabSoma + MediaTrabs;
+
+  console.log("Soma ", mediaAlunosSoma);
+  console.log("Soma Provas ", mediaProvasSoma);
+  console.log("Soma Trabs ", mediaTrabSoma);
+  document.getElementById('sistema').innerHTML += `Media Aluno ${i + 1}: ${MediaInd}<br>`;
+};
+
+mediaAlunosSoma = mediaAlunosSoma/mediaAlunos.length;
+mediaAlunosSoma = mediaAlunosSoma.toFixed(2);
+console.log("Media Geral: ", mediaAlunosSoma);
+
+document.getElementById('sistema').innerHTML += `Media Geral Alunos: ${mediaAlunosSoma}<br>`;
+
+mediaProvasSoma = mediaProvasSoma/provaAlunos.length;
+mediaTrabSoma = mediaTrabSoma/trabAlunos.length;
+console.log("Media Provas: ", mediaProvasSoma);
+console.log("Media Trabs: ", mediaTrabSoma);
+document.getElementById('sistema').innerHTML += `Media Provas Alunos: ${mediaProvasSoma}<br>`;
+document.getElementById('sistema').innerHTML += `Media Trabalhos Alunos: ${mediaTrabSoma}<br>`;
+
+var minProva = Math.min(...provaAlunos)
+var maxProva = Math.max(...provaAlunos)
+console.log("Min Prova: ", minProva)
+console.log("Max Prova: ", maxProva)
+document.getElementById('sistema').innerHTML += `Nota mais baixa da Prova: ${minProva} | Nota mais alta da Prova: ${maxProva}<br>`
+
+var minTrab = Math.min(...trabAlunos);
+var maxTrab = Math.max(...trabAlunos);
+console.log("Min Trab: ", minTrab)
+console.log("Max Trab: ", maxTrab)
+document.getElementById('sistema').innerHTML += `Nota mais baixa do Trabalho: ${minTrab} | Nota mais alta do Trabalho: ${maxTrab}<br>`
+};
