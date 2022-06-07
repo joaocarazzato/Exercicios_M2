@@ -40,7 +40,7 @@ function contaviagem() {
     var pessoas = document.getElementById('pessoas').value;
     var preco = 0
     if (diurno.checked == true && (pessoas => 1)) {
-      if (1 <= pessoas && pessoas < 50) {
+      if (1 <= pessoas && pessoas <= 50) {
       preco = pessoas * 200
       console.log(preco)
       document.getElementById('resultadoconta').innerHTML = `Sua conta diurna de ${pessoas} pessoas é de R$${preco}`
@@ -52,7 +52,7 @@ function contaviagem() {
       }
     }
     else if (noturno.checked == true && (pessoas => 1)) {
-        if (1 <= pessoas && pessoas < 50){
+        if (1 <= pessoas && pessoas <= 50){
           preco = pessoas * 100
           console.log(preco)
           document.getElementById('resultadoconta').innerHTML = `Sua conta noturna de ${pessoas} pessoas é de R$${preco}`
@@ -134,6 +134,8 @@ document.getElementById('sistema').innerHTML += `Media Geral Alunos: ${mediaAlun
 
 mediaProvasSoma = mediaProvasSoma/provaAlunos.length;
 mediaTrabSoma = mediaTrabSoma/trabAlunos.length;
+mediaProvasSoma = mediaProvasSoma.toFixed(2);
+mediaTrabSoma = mediaTrabSoma.toFixed(2);
 console.log("Media Provas: ", mediaProvasSoma);
 console.log("Media Trabs: ", mediaTrabSoma);
 document.getElementById('sistema').innerHTML += `Media Provas Alunos: ${mediaProvasSoma}<br>`;
