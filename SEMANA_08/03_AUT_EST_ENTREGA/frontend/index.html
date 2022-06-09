@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- Usando o CSS próprio -->
+	<link rel="stylesheet" href="css/estilo.css">
+
+    <title>Currículo Entrega</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./script.js"></script>
+  <body>
+
+	<div class="container">
+		<!-- Conteúdo aqui -->
+		<h1><b>Currículo</b></h1>
+		<!-- Empilhe as colunas, em dispositivos móveis, fazendo com que uma tenha largura total e a outra só metade -->
+		<div class="row">
+			<div class="col-12 col-md-8 nome" id="nome"><b>João Pedro Gonçalves Carazzato </b>
+			<a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-gon%C3%A7alves-carazzato-147120231"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20" height="20"></a></div> <!-- esquerda cima-->
+			<div class="col-6 col-md-4 right gray">Computer Engineer</div> <!-- direita cima-->
+		</div>
+		<hr>
+		<!-- Colunas começam com largura de 50%, em dispositivos móveis, e caem para 33.3% nos desktops -->
+		<div class="row">
+			<div class="col-12 col-md-4 middletext middle"><div class="bigtext"><b>Idiomas</b></div><br>Português<br>Espanhol<br>Inglês</div>
+			<div class="col-12 col-md-4"><a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-gon%C3%A7alves-carazzato-147120231"><img src="img/perfil.jfif" alt="Foto de um urso, sim, um urso." style="border-radius: 80%"></a></div> <!--meio esquerda, meio, meio direita-->
+			<div class="col-12 col-md-4 middletext middle"><div class="bigtext"><b>Portfólio</b></div><div class="justify"><br><a href="https://github.com/2022M1T1/Projeto1"><u>AMBEV - Gamificação do Processo de Diversificação</u></a></div></div>
+		</div>
+		
+		<hr>
+		<div class="row">
+		<!-- Colunas sempre com metade da largura disponível, em dispositivos móveis e desktop -->
+<button onclick="showup()" class="middletext col-3" style="height: 3rem;">Mostrar Mais</button>
+
+		<more class="col-9 hidden" id="linguagens">
+			<div class="col-12 col-md-12 middletext" id="peak"><b>Linguagens Conhecidas</b><div class="bigtext" id="ghost"><br><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="Foto da Linguagem CSS" width="40" height="40">
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="Foto da Linguagem HTML" width="40" height="40">
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg" alt="Foto da Linguagem Godot" width="40" height="40">
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Foto da Linguagem JavaScript" width="40" height="40"></div></div> <!-- baixo -->
+			</more>
+			</div>
+			<br>
+		<div id="crud">
+			<input placeholder="Seu nome" id="nome1" name="name"></input><input placeholder="Sua Pergunta" id="pergunta1" name="question"><br>
+			<button onclick="testecreate()">Enviar Pergunta</button>
+			<button onclick="testeupdate()">Atualizar sua pergunta pelo nome</button>
+			<button onclick="testedelete()">Deletar pergunta pelo nome</button>
+			<div id="answer"> </div>
+			<button onclick="teste()">Mostrar todas as perguntas</button><br>
+		</div>
+		<div id="answerQuestions"> </div>
+	</div>
+
+  
+    <!-- JavaScript (Opcional) -->
+    <!--  Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
